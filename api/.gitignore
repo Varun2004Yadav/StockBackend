@@ -1,0 +1,15 @@
+
+bin/
+obj/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+*.log
+**/Dockerfile.user
+.env
+appsettings.Development.json
+appsettings.Local.json
