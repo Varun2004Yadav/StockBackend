@@ -10,7 +10,7 @@ public class CreateStockRequestDto
     public string Symbol {get; set; } = string.Empty;
 
     [Required]
-    [MaxLength(10,ErrorMessage = "Symbol cannot be over 10 characters")]
+    [MaxLength(20,ErrorMessage = "Symbol cannot be over 10 characters")]
     public string CompanyName { get; set; } = string.Empty;
 
     [Required]

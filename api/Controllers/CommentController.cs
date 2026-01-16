@@ -56,7 +56,8 @@ namespace api.Controllers
             return Ok(comment.ToCommentDto());
         }
 
-        [HttpPost("{stockId:int}")]
+        [HttpPost]
+        [Route("{stockId:int}")]
         public async Task<IActionResult> Create([FromRoute] int stockId,  CreateCommentDto commentDto)
         {
             if(!ModelState.IsValid)
@@ -74,7 +75,7 @@ namespace api.Controllers
 
             return CreatedAtAction(
                 nameof(GetById), 
-                new{id = commentModel}, 
+                new{id = commentModel.Id}, 
                 commentModel.ToCommentDto());
         }
 
@@ -102,7 +103,7 @@ namespace api.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
+
             var commentModel = await _commentRepo.DeleteAsync(id);
 
             if(commentModel == null) return NotFound("Comment Does Not Exist");
