@@ -7,7 +7,6 @@ obj/
 *.user
 *.suo
 .DS_Store
-Thumbs.db
 *.log
 **/Dockerfile.user
 .env
