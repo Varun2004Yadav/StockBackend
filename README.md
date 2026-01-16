@@ -14,7 +14,7 @@ Step 4: dotnet run
 
 Step 5: http://localhost:5000/swagger
 
-Run Using Docker 
+Run Using Docker :
 
     Docker Image: varun997/stock-api
 
@@ -26,7 +26,7 @@ Run Using Docker
 
 Image available at: https://hub.docker.com/r/varun997/stock-api
 
-Common Commands
+Common Commands:
     1.docker build -t stock-api .
     2.docker tag stock-api varun997/ stock-api:latest
     3.docker push varun997/stock-api:latest

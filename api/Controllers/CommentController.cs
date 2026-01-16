@@ -1,4 +1,5 @@
 using api.Dtos;
+using api.Dtos.Comment;
 using api.Interfaces;
 using api.Mappers;
 using api.Models;
@@ -60,6 +61,29 @@ namespace api.Controllers
                 nameof(GetById), 
                 new{id = commentModel}, 
                 commentModel.ToCommentDto());
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCommentRequestDto updateDto)
+        {
+
+            var comment = await _commentRepo.UpdateAsync(id,updateDto.ToCommentFromUpdate());
+            
+            if(comment == null) return NotFound("comment not found");
+
+            return Ok(comment.ToCommentDto());
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete ([FromRoute] int id)
+        {
+            var commentModel = await _commentRepo.DeleteAsync(id);
+
+            if(commentModel == null) return NotFound("Comment Does Not Exist");
+
+            return Ok(commentModel);
         }
     }
 }

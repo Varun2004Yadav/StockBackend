@@ -15,6 +15,7 @@ public class Stock
     [Column(TypeName = "decimal(18,2)")]
 
     public decimal Purchase {get; set; } 
+    
     [Column(TypeName ="decimal(18,2)")]
 
     public decimal LastDiv {get; set; }
