@@ -10,5 +10,5 @@ obj/
 *.log
 **/Dockerfile.user
 .env
-appsettings.Development.json
+appsettings.json
 appsettings.Local.json
